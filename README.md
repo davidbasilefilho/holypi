@@ -68,9 +68,9 @@ This is a deliberately bounded Pi analogue of Claude Code's dynamic workflows:
 model-authored orchestration, isolated specialized agents, adaptive fan-out,
 parallel and sequential stages, result handoffs, and explicit verification.
 HolyPi caps a workflow at 48 calls and 4 concurrent children, rather than aiming
-at Claude's research-preview scale. Children start with `--no-extensions` so
-their native tool restrictions are stable and they cannot recursively load the
-workflow engine.
+at Claude's research-preview scale. Children disable extensions, skills, and
+prompt templates: their native tool restrictions stay stable, their prompts stay
+small, and they cannot recursively load the workflow engine.
 
 Inspired by [HolyCodex](https://github.com/davidbasilefilho/holycodex), Pi's
 official subagent example, and

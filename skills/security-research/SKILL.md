@@ -1,6 +1,6 @@
 ---
 name: security-research
-description: Runs an exploitability-driven security audit with parallel attack-surface, auth/data, runtime/supply-chain, and independent PoC passes. Use for security review, vulnerability research, exploitability audits, threat-model validation, or pre-release checks; do not use for routine correctness review.
+description: Exploitability-driven security audit: surface, auth/data, runtime/supply, and independent PoCs; not routine review.
 ---
 
 # Security research

@@ -1,8 +1,8 @@
 ---
 name: debugging
-description: Diagnoses reproducible failures through evidence, competing hypotheses, and focused experiments. Use for unexplained incorrect behavior; use programming for already-understood fixes.
+description: Diagnose unexplained reproducible failures via competing hypotheses and focused experiments.
 ---
 
 # Debugging
 
-Reproduce or define the observable failure. Trace inputs and state to the failing boundary. Rank hypotheses, run discriminating checks, and update from evidence. Fix the root cause narrowly, add a regression test when useful, and rerun both focused and relevant broader checks.
+Reproduce/define the failure; trace input/state to its boundary. Rank hypotheses and run discriminating checks. Fix root cause narrowly, add useful regression proof, then rerun focused and relevant broader checks.

@@ -1,6 +1,6 @@
 ---
 name: frontend-taste
-description: Designs and audits distinctive production interfaces against the complete pols.dev anti-slop law. Use for frontend layout, styling, visual systems, UI motion, design critique, or browser-based visual QA; user-specific visual direction overrides these defaults.
+description: Design/audit distinctive production UI using the complete pols.dev anti-slop law; user visual direction wins.
 ---
 
 # Frontend taste

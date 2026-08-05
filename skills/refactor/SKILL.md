@@ -1,8 +1,8 @@
 ---
 name: refactor
-description: Improves code structure while preserving externally observable behavior. Use when behavior must remain invariant; use programming when behavior intentionally changes.
+description: Improve structure while preserving observable behavior; use programming for behavior changes.
 ---
 
 # Refactor
 
-State the invariant behavior and structural goal. Establish baseline tests. Make reversible, reviewable steps; avoid unrelated cleanup and speculative abstractions. Verify behavior after each boundary change and compare public API, errors, and side effects.
+State behavior invariants/structural goal; establish baseline proof. Make reversible steps without unrelated cleanup or speculative abstraction. After each boundary change compare API, errors, side effects, tests.

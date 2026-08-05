@@ -1,8 +1,8 @@
 ---
 name: plan
-description: Produces implementation-ready plans grounded in repository evidence. Use before broad, risky, or ambiguous changes.
+description: Evidence-grounded implementation plan for broad, risky, or ambiguous changes.
 ---
 
 # Plan
 
-Map current behavior, entry points, ownership, constraints, and tests. Resolve material product or architecture choices in the parent. Write ordered steps naming files, behavior, interfaces, proof, dependencies, and rollback concerns. A worker should not need to rediscover architecture.
+Map behavior, entry points, ownership, constraints, tests. Resolve material product/architecture choices. Order steps with files, behavior, interfaces, proof, dependencies, rollback. Leave workers no architecture discovery.

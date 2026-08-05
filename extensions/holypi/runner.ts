@@ -30,6 +30,23 @@ function piCommand(): string {
   return process.env.HOLYPI_PI_COMMAND || name;
 }
 
+export function buildAgentArgs(agent: AgentDefinition, prompt: string, task: string): string[] {
+  const args = [
+    "--mode",
+    "json",
+    "-p",
+    "--no-session",
+    "--no-extensions",
+    "--no-skills",
+    "--no-prompt-templates",
+    "--append-system-prompt",
+    prompt,
+  ];
+  if (agent.tools.length) args.push("--tools", agent.tools.join(","));
+  args.push(`Task: ${task}`);
+  return args;
+}
+
 export async function runAgent(
   agent: AgentDefinition,
   task: string,
@@ -39,17 +56,7 @@ export async function runAgent(
   const temp = await mkdtemp(join(tmpdir(), "holypi-agent-"));
   const prompt = join(temp, `${agent.name}.md`);
   await writeFile(prompt, agent.prompt, { encoding: "utf8", mode: 0o600 });
-  const args = [
-    "--mode",
-    "json",
-    "-p",
-    "--no-session",
-    "--no-extensions",
-    "--append-system-prompt",
-    prompt,
-  ];
-  if (agent.tools.length) args.push("--tools", agent.tools.join(","));
-  args.push(`Task: ${task}`);
+  const args = buildAgentArgs(agent, prompt, task);
 
   try {
     return await new Promise<RunResult>((resolve, reject) => {

@@ -1,8 +1,8 @@
 ---
 name: compress
-description: Compresses working context into a precise continuation record. Use before compaction or a context switch; use handoff instead when another agent or session will take ownership.
+description: Compact same-owner context for continuation; use handoff when ownership changes.
 ---
 
 # Compress
 
-Record objective, fixed decisions, current state, changed paths, decisive evidence, commands and results, unresolved blockers, risks, and the exact next action. Omit chronology, repeated exploration, and superseded hypotheses. Preserve identifiers and paths needed to resume.
+Record objective, decisions, state, changed paths, decisive evidence, command results, blockers, risks, and exact next action. Drop chronology, repeated exploration, and dead hypotheses; preserve resumable identifiers/paths.

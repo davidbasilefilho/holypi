@@ -54,23 +54,18 @@ export default function holypi(pi: ExtensionAPI) {
     name: "holy_workflow",
     label: "Holy Workflow",
     description: [
-      "Execute model-authored JavaScript that plans and coordinates isolated Pi subagents.",
-      "Use one run() for bounded context isolation; parallel() for independent packets; ordinary JavaScript loops and conditionals for adaptive fan-out, retries, staged migrations, review, and verification.",
-      "Available agents are explorer (read-only repository evidence), librarian (current primary-source research), and worker (fixed-scope implementation only after decisions and ownership are settled).",
-      `Code is an async function body with run(agent, packet, cwd?), parallel(thunks), cwd, and agents. Maximum ${MAX_AGENT_CALLS} calls and ${MAX_CONCURRENCY} concurrent agents.`,
-      "Return a compact synthesis or structured handoff; the parent still owns architecture, integration, user decisions, and final verification.",
+      "Run model-authored JavaScript coordinating isolated Pi agents.",
+      "The async body receives run(agent, packet, cwd?), parallel(thunks), cwd, and agents.",
+      "Explorer finds repo evidence; librarian finds current primary sources; worker implements settled, isolated scope.",
+      "Use run() once for one side task, parallel() only for independent tasks, and normal JavaScript for adaptive stages/retries.",
+      `Limit: ${MAX_AGENT_CALLS} calls, ${MAX_CONCURRENCY} concurrent. Return a compact synthesis; the parent owns decisions, integration, and final proof.`,
     ].join(" "),
     promptSnippet:
-      "Write adaptive JavaScript workflows that spawn and coordinate explorer, librarian, and worker subagents",
-    promptGuidelines: [
-      "Use holy_workflow when isolated context, independent research, adaptive fan-out, staged implementation, or adversarial verification materially helps; for a single bounded delegation, write `return run(agent, packet)`.",
-      "holy_workflow packets should state outcome, scope, fixed decisions, expected proof, and stop conditions; parallelize only independent work and never give workers overlapping write ownership.",
-      "Treat holy_workflow outputs as evidence rather than authority; inspect failures, resolve conflicts, integrate changes, and run final verification in the parent.",
-    ],
+      "Write adaptive JavaScript workflows over explorer, librarian, and worker agents",
     parameters: Type.Object({
       code: Type.String({
         description:
-          "Async JavaScript function body. It must call run() and return a value. Example: return parallel([() => run('explorer', {outcome:'Map auth', proof:'paths and lines'}), () => run('librarian', {outcome:'Find current official auth docs', proof:'claim-linked URLs'})])",
+          "Async function body; call run() and return a value. Example: return run('explorer', {outcome:'Map auth', proof:'paths/lines'})",
       }),
     }),
     async execute(_id, params, signal, onUpdate, ctx) {

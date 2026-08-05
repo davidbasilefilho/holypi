@@ -1,8 +1,8 @@
 ---
 name: babysit-ci
-description: Monitors CI to completion, diagnoses causal failures, and applies bounded fixes when authorized. Use when the user asks to watch or repair a specific CI run.
+description: Watch a specified CI run to completion; diagnose and, when authorized, fix causal failures.
 ---
 
 # Babysit CI
 
-Identify the exact run and commit. Poll with reasonable backoff until terminal state. On failure, inspect the first causal error rather than downstream noise, reproduce locally when practical, make only authorized fixes, and rerun. Report links, status, and unresolved infrastructure failures.
+Identify run/commit; poll with backoff to terminal state. Trace the first causal failure, reproduce locally when practical, apply only authorized fixes, rerun, then report link, status, and infrastructure blockers.

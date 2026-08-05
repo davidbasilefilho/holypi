@@ -1,8 +1,8 @@
 ---
 name: programming
-description: Implements software changes end to end with narrow scope and evidence. Use for features, fixes, migrations, and maintenance.
+description: Implement features, fixes, migrations, or maintenance end to end with narrow scope and proof.
 ---
 
 # Programming
 
-Establish outcome and constraints. Inspect before editing. Preserve architecture and user work; make the smallest coherent change. Delegate bounded evidence or isolated writes through HolyPi when useful. Test the changed behavior and relevant regression surface. Report changed paths, proof, and residual risk.
+Fix outcome/constraints; inspect first. Preserve architecture/user work; make the smallest coherent change. Delegate only useful bounded lanes. Test changed behavior plus relevant regression surface. Report paths, proof, residual risk.

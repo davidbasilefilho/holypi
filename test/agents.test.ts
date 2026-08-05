@@ -6,6 +6,7 @@ import { describe, expect, test } from "vitest";
 
 import { discoverAgents } from "../extensions/holypi/agents.js";
 import { renderPacket } from "../extensions/holypi/index.js";
+import { buildAgentArgs } from "../extensions/holypi/runner.js";
 
 describe("agent discovery", () => {
   test("loads bundled presets", () => {
@@ -53,4 +54,27 @@ describe("workflow packets", () => {
       ].join("\n"),
     );
   });
+});
+
+test("subagents load only their bounded prompt and tools", () => {
+  expect(
+    buildAgentArgs(
+      { name: "explorer", description: "repo facts", tools: ["read", "grep"], prompt: "bounded" },
+      "prompt.md",
+      "map auth",
+    ),
+  ).toEqual([
+    "--mode",
+    "json",
+    "-p",
+    "--no-session",
+    "--no-extensions",
+    "--no-skills",
+    "--no-prompt-templates",
+    "--append-system-prompt",
+    "prompt.md",
+    "--tools",
+    "read,grep",
+    "Task: map auth",
+  ]);
 });

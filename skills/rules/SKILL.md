@@ -1,8 +1,8 @@
 ---
 name: rules
-description: Creates and audits scoped AGENTS.md instructions that are concise, nonduplicative, and testable. Use only for repository instruction files and their precedence.
+description: Create/audit concise scoped AGENTS.md rules and precedence; only for repo instructions.
 ---
 
 # Rules
 
-Discover applicable instruction files and repository boundaries. Put each rule at the narrowest useful scope. Preserve required commands and non-obvious constraints; remove generic advice, duplication, contradictions, and stale paths. Verify nested precedence and keep agent-facing text dense.
+Find instruction files/boundaries. Scope each rule narrowly. Preserve required commands and non-obvious constraints; remove generic, duplicate, conflicting, stale text. Verify precedence; keep agent text dense.
