@@ -9,8 +9,8 @@ import { discoverAgents } from "./agents.js";
 import { runAgent, type RunResult } from "./runner.js";
 
 const MAX_WORKFLOW_BYTES = 32_000;
-const MAX_AGENT_CALLS = 64;
-const MAX_CONCURRENCY = 8;
+const MAX_AGENT_CALLS = 48;
+const MAX_CONCURRENCY = 4;
 const holyInstructions = readFileSync(
   resolve(dirname(fileURLToPath(import.meta.url)), "../../SYSTEM.md"),
   "utf8",

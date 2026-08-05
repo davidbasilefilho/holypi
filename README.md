@@ -67,7 +67,7 @@ verification.
 This is a deliberately bounded Pi analogue of Claude Code's dynamic workflows:
 model-authored orchestration, isolated specialized agents, adaptive fan-out,
 parallel and sequential stages, result handoffs, and explicit verification.
-HolyPi caps a workflow at 64 calls and 8 concurrent children, rather than aiming
+HolyPi caps a workflow at 48 calls and 4 concurrent children, rather than aiming
 at Claude's research-preview scale. Children start with `--no-extensions` so
 their native tool restrictions are stable and they cannot recursively load the
 workflow engine.
