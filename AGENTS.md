@@ -1,0 +1,5 @@
+- Vite+ owns the Node 26 toolchain and package workflow. Use `vp install`, `vp add`, `vp remove`, and `vp update`; never run npm, pnpm, yarn, or bare bun package-management commands in this repository.
+- Run one-off package executables with `vpx`, never `npx`, `bunx`, or `pnpm dlx`.
+- Use Vite+ built-ins for repository proof: `vp check`, `vp check --fix`, and `vp test`. Use `vp run <script>` only for project scripts without a built-in equivalent.
+- Keep `mise.toml`, `engines.node`, and Vite+ configuration aligned on Node 26. Do not edit generated lockfiles manually.
+- Follow ZeroVer: public package versions stay below `1.0.0`; breaking changes increment the minor component and compatible changes increment the patch component.

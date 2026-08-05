@@ -79,7 +79,7 @@ official subagent example, and
 ## Development
 
 ```bash
-bun install
+vp install
 vp check
 vp test
 ```
