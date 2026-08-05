@@ -1,6 +1,6 @@
 ---
 name: security-research
-description: Exploitability-driven security audit: surface, auth/data, runtime/supply, and independent PoCs; not routine review.
+description: "Exploitability-driven security audit: surface, auth/data, runtime/supply, and independent PoCs; not routine review."
 ---
 
 # Security research
