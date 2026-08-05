@@ -5,7 +5,7 @@
     "moduleResolution": "NodeNext",
     "strict": true,
     "noEmit": true,
-    "types": ["bun-types", "node"],
+    "types": ["node", "vitest/globals"],
     "skipLibCheck": true
   },
   "include": ["extensions/**/*.ts", "test/**/*.ts"]

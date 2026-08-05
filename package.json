@@ -1,30 +1,64 @@
 {
   "name": "holypi",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "HolyCodex workflows, skills, and subagents for Pi",
-  "type": "module",
+  "keywords": [
+    "agent-skills",
+    "pi-extension",
+    "pi-package",
+    "subagents"
+  ],
   "license": "SUL-1.0",
   "repository": "github:davidbasilefilho/holypi",
-  "keywords": ["pi-package", "pi-extension", "agent-skills", "subagents"],
-  "files": ["extensions", "agents", "prompts", "skills", "SYSTEM.md", "LICENSE"],
-  "pi": {
-    "extensions": ["./extensions/holypi/index.ts"],
-    "skills": ["./skills"],
-    "prompts": ["./prompts"]
-  },
+  "files": [
+    "extensions",
+    "agents",
+    "prompts",
+    "skills",
+    "SYSTEM.md",
+    "LICENSE"
+  ],
+  "type": "module",
   "scripts": {
-    "check": "tsc --noEmit && bun test",
-    "test": "bun test"
+    "check": "vp check",
+    "check:fix": "vp check --fix",
+    "test": "vp test"
+  },
+  "dependencies": {
+    "@howaboua/pi-ask": "0.0.4",
+    "@howaboua/pi-auto-reasoning-tool": "0.1.11"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.2",
+    "typescript": "^7.0.2",
+    "vite": "^8.2.0",
+    "vite-plus": "0.2.8",
+    "vitest": "^4.0.0"
   },
   "peerDependencies": {
     "@earendil-works/pi-ai": "*",
     "@earendil-works/pi-coding-agent": "*",
     "typebox": "*"
   },
-  "devDependencies": {
-    "@types/node": "^24.0.0",
-    "bun-types": "^1.3.0",
-    "typescript": "^6.0.0"
+  "bundledDependencies": [
+    "@howaboua/pi-ask",
+    "@howaboua/pi-auto-reasoning-tool"
+  ],
+  "engines": {
+    "node": ">=26 <27"
   },
-  "engines": { "node": ">=22" }
+  "packageManager": "bun@1.3.14",
+  "pi": {
+    "extensions": [
+      "./extensions/holypi/index.ts",
+      "./node_modules/@howaboua/pi-ask/index.ts",
+      "./node_modules/@howaboua/pi-auto-reasoning-tool/src/index.ts"
+    ],
+    "skills": [
+      "./skills"
+    ],
+    "prompts": [
+      "./prompts"
+    ]
+  }
 }

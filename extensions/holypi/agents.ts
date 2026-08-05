@@ -24,7 +24,10 @@ function parseAgent(file: string): AgentDefinition {
   return {
     name: fields.name,
     description: fields.description,
-    tools: (fields.tools ?? "").split(",").map((tool) => tool.trim()).filter(Boolean),
+    tools: (fields.tools ?? "")
+      .split(",")
+      .map((tool) => tool.trim())
+      .filter(Boolean),
     prompt: match[2].trim(),
   };
 }
@@ -35,7 +38,9 @@ export function discoverAgents(cwd: string, includeProject = false): AgentDefini
   if (includeProject) directories.push(join(cwd, ".pi", "agents"));
   for (const dir of directories) {
     if (!existsSync(dir)) continue;
-    for (const name of readdirSync(dir).filter((entry) => entry.endsWith(".md")).sort()) {
+    for (const name of readdirSync(dir)
+      .filter((entry) => entry.endsWith(".md"))
+      .sort()) {
       const agent = parseAgent(join(dir, name));
       byName.set(agent.name, agent);
     }
